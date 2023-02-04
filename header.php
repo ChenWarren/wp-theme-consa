@@ -20,13 +20,9 @@
 
     <!--header section start -->
     <div class="header_section">
-
         <!--header section start -->
         <?php get_template_part('template-parts/header/navbar'); ?>
         <!--header section end -->
-
-        <!--banner section start -->
-        <?php get_template_part('template-parts/header/banner'); ?>
-        <!--banner section end -->
     </div>
+
     <!--header section end -->
