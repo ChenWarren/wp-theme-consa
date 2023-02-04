@@ -6,10 +6,34 @@
  get_header();  
  ?>
 
+<!--banner section start -->
 <div class="header_section">
-    <!--banner section start -->
     <?php get_template_part('template-parts/home/banner'); ?>
-    <!--banner section end -->
 </div>
+<!--banner section end -->
 
- <?php get_footer(); ?>
+<!--about section start -->
+<?php get_template_part('template-parts/home/home-about'); ?>
+<!--about section end -->
+
+<!-- services section start -->
+<?php get_template_part('template-parts/home/home-services'); ?>
+<!-- services section end -->
+
+<!-- blog section start -->
+<?php get_template_part('template-parts/home/home-blog'); ?>
+<!-- blog section end -->
+
+<!-- events section start -->
+<?php get_template_part('template-parts/home/home-events'); ?>
+<!-- events section end -->
+
+<!-- contact section start -->
+<?php get_template_part('template-parts/home/home-contact'); ?>
+<!-- contact section end -->
+
+<!-- testimonial section start -->
+<?php get_template_part('template-parts/home/home-testimonial'); ?>
+<!-- testimonial section end -->
+
+<?php get_footer(); ?>
