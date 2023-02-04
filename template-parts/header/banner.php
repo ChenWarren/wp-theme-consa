@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Cosa Theme Banner for header
  * 

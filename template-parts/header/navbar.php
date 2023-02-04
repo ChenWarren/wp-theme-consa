@@ -33,9 +33,17 @@ $header_nav_menu = wp_get_nav_menu_items($menu_id);
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home</a>
-            </li>
+            <?php
+            foreach($header_nav_menu as $header_nav_menu_item) {
+                ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo esc_attr(esc_url($header_nav_menu_item->url)); ?>">
+                    <?php echo esc_html($header_nav_menu_item->title) ?>
+                    </a>
+                </li>
+                <?php
+            }
+            ?>
 
         </ul>
         <form class="form-inline my-2 my-lg-0">

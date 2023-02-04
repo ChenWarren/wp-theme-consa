@@ -3,7 +3,7 @@
  * Cosa Theme Home page
  */
 
- get_header(); 
+ get_header();  
  ?>
 
  <h1><?php the_title(); ?> Front page</h1>

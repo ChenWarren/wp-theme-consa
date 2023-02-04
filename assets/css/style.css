@@ -240,7 +240,7 @@ button {
     padding-right: 15px;
     padding-left: 15px;
     font-size: 18px;
-    color: #acabab;
+    color: #7b7b7b;
     text-transform: uppercase;
 }
 .navbar-light .navbar-nav .nav-link:focus, 
@@ -252,6 +252,9 @@ button {
 .navbar-light .navbar-nav .nav-link.show, 
 .navbar-light .navbar-nav .show>.nav-link {
     color: #070707;
+}
+.nav-item {
+    z-index: 999;
 }
 .logo{ 
     width: 25%;
