@@ -39,6 +39,8 @@
                 'footer' => esc_html__('Footer Menu', 'consa'),
             )
         );
+
+
     }
  }
  add_action('after_setup_theme', 'consa_setup');
@@ -133,3 +135,68 @@
 
  }
  add_action('wp_enqueue_scripts', 'consa_enqueue_scripts');
+
+ /**
+  * Consa Theme Custom post type
+  * Add custom taxonomy 
+  */
+
+  function consa_custom_post_types() {
+
+    $serives_texonomy_args = array(
+        'labels' => array(
+            'name' => 'Types',
+            'singular_name' => 'Role',
+            'add_new_item' => 'Add Role',
+            'new_item_name' => 'New Role',
+            'edit_item' => 'Edit Role',
+            'update_item' => 'Update Role',
+            'all_items' => 'All Types',
+            'search_items' => 'Search Types',
+            'parent_item' => 'Parent Role',
+            'menu_name' => 'Types',
+            'back_to_items' => '← Back to Types',
+        ),
+        'public' => true,
+        'hierarchical' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'show_in_rest' => true,
+    );
+
+    $services_labels = array(
+        'name' => 'Services',
+        'singular_name' => 'Service',
+        'add_new' => 'Add New service',
+        'add_new_item' => 'Add New service',
+        'edit_item' => 'Edit service',
+        'new_item' => 'New service',
+        'all_items' => 'All services',
+        'view_item' => 'View service',
+        'search_items' => 'Search services',
+        'not_found' => 'No Services found',
+        'not_found_in_trash' => 'No Services found in Trash',
+        'parent_item_colon' => ',',
+        'menu_name' => 'Services'
+    );
+
+    $services_args = array(
+        'labels' => $services_labels,
+        'description' => 'Holds our Services and Service specific data',
+        'public' => true,
+        'menu_position' => 5,
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_icon' => 'dashicons-groups',
+        'show_in_rest' => true,
+    );
+
+    register_post_type('services', $services_args);
+    register_taxonomy('types', array('services'), $serives_texonomy_args);
+
+  }
+  add_action('init', 'consa_custom_post_types');
+  
+  

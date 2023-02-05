@@ -24,7 +24,7 @@ $header_nav_menu = wp_get_nav_menu_items($menu_id);
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <!-- Logo start -->
-    <div class="logo"><a href="index.html">
+    <div class="logo"><a href="/">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png' ?>"></a>
     </div>
     <!-- Logo end -->
