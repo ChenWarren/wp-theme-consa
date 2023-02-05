@@ -143,6 +143,7 @@
 
   function consa_custom_post_types() {
 
+    // Services post type
     $serives_texonomy_args = array(
         'labels' => array(
             'name' => 'Types',
@@ -189,11 +190,42 @@
         'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
         'has_archive' => true,
         'hierarchical' => false,
-        'menu_icon' => 'dashicons-groups',
+        'menu_icon' => 'dashicons-businessman',
+        'show_in_rest' => true,
+    );
+
+
+    // Events post type
+    $events_labels = array(
+        'name' => 'Events',
+        'singular_name' => 'Event',
+        'add_new' => 'Add New Event',
+        'add_new_item' => 'Add New Event',
+        'edit_item' => 'Edit Event',
+        'new_item' => 'New Event',
+        'all_items' => 'All Events',
+        'view_item' => 'View Event',
+        'search_items' => 'Search Events',
+        'not_found' => 'No Events found',
+        'not_found_in_trash' => 'No Events found in Trash',
+        'parent_item_colon' => ',',
+        'menu_name' => 'Events'
+    );
+    
+    $events_args = array(
+        'labels' => $events_labels,
+        'description' => 'Holds our Events and Event specific data',
+        'public' => true,
+        'menu_position' => 6,
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_icon' => 'dashicons-calendar-alt',
         'show_in_rest' => true,
     );
 
     register_post_type('services', $services_args);
+    register_post_type('events', $events_args);
     register_taxonomy('types', array('services'), $serives_texonomy_args);
 
   }

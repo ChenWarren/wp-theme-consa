@@ -1,6 +1,6 @@
 <?php
 /**
- * Cosa Theme content template
+ * Cosa Theme Content Events template
  */
 ?>
 
