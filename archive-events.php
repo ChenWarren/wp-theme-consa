@@ -4,7 +4,7 @@
  */
 get_header();
 ?>
-	<main id="primary">
+<main id="primary">
 
 <?php if ( have_posts() ) : ?>
 

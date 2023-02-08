@@ -28,12 +28,12 @@
 <?php get_template_part('template-parts/home/home-events'); ?>
 <!-- events section end -->
 
-<!-- contact section start -->
-<?php get_template_part('template-parts/home/home-contact'); ?>
-<!-- contact section end -->
-
 <!-- testimonial section start -->
 <?php get_template_part('template-parts/home/home-testimonial'); ?>
 <!-- testimonial section end -->
+
+<!-- contact section start -->
+<?php get_template_part('template-parts/home/home-contact'); ?>
+<!-- contact section end -->
 
 <?php get_footer(); ?>
