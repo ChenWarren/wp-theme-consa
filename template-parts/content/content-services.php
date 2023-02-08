@@ -4,45 +4,38 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header>
+<div class="col-lg-4">
+	<div class="icon_box">
+		<div class="icon_1">
 		<?php
+		the_post_thumbnail('thumbnail');
+		?>
+		</div>
+	</div>
+	<h4 class="selection_text">
+		<?php 
 		if ( is_singular() ) :
-			the_title( '<h1>', '</h1>' );
+			the_title();
 		else :
-			the_title( '<h2><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a>' );
 		endif;
 		?>
-	</header><!-- .entry-header -->
-
-    <?php
-    the_post_thumbnail('thumbnail');
-    ?>
-
-
-	<div>
+	</h4>
+	<p class="ipsum_text">
 		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'consa' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'consa' ),
-				'after'  => '</div>',
-			)
-		);
+		the_excerpt();
 		?>
-	</div><!-- .entry-content -->
-</article>
+	</p>
+</div>
+	
+<div>
+	<?php
+	
+	wp_link_pages(
+		array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'consa' ),
+			'after'  => '</div>',
+		)
+	);
+	?>
+</div>

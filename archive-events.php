@@ -4,7 +4,10 @@
  */
 get_header();
 ?>
-<main id="primary">
+
+<!-- events section start -->
+<?php get_template_part('template-parts/home/home-events'); ?>
+<!-- events section end -->
 
 <?php if ( have_posts() ) : ?>
 
@@ -44,7 +47,6 @@ else :
 endif;
 ?>
 
-</main><!-- #main -->
 
 <?php
 get_footer();

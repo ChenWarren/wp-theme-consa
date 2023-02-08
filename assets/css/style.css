@@ -461,9 +461,7 @@ button {
 .services_section{
     width: 100%;
     float: left;
-    background-image: url(../images/services-bg.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background-color: #f3f3f3;
 }
 .services_taital {
     width: 40%;
